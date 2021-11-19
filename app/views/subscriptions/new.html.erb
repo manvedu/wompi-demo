@@ -1,0 +1,9 @@
+<form method="POST" action="/my_own_process_token">
+    <script
+      src="https://checkout.wompi.co/widget.js"
+      data-render="button"
+      data-widget-operation="tokenize"
+      data-public-key=<%= ENV['MERCHANT_PUBLIC_KEY'] %>
+      >
+    </script>
+</form>
