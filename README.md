@@ -3,8 +3,7 @@
 Hi! 
 
 Using this project you can create tokens in Wompi and with that token create a payment source. 
-Card's tokenization uses the widget provided by Wompi.
-
+For the tokenization this projects uses the widget](https://docs.wompi.co/docs/en-us/fuentes-de-pago#widget-in-tokenization-mode) provided by Wompi.
 
 # Dependencies
 
