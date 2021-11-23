@@ -1,9 +1,11 @@
-# Welcome Wompi's tokenizer!
+
+
+
+# Welcome to Wompi's tokenizer!
 
 Hi! 
 
-Using this project you can create tokens in Wompi and with that token create a payment source. 
-For the tokenization this projects uses the [widget](https://docs.wompi.co/docs/en-us/fuentes-de-pago#widget-in-tokenization-mode) provided by Wompi.
+Using this project, you can create tokens in Wompi and with them create a payment source. For tokenization, this project uses the [widget](https://docs.wompi.co/docs/en-us/fuentes-de-pago#widget-in-tokenization-mode) provided by Wompi.
 
 
 # Installation
