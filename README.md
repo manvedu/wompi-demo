@@ -49,7 +49,7 @@ in the `config/routes` so you receive a paramater called `payment_source_token` 
 
 With this token we call the `Wompi::Client` found in `lib/wompi/client.rb` which creates the payment source.
 
-The `Wompi::Client` ask for the acceptance_token and with the acceptance_token and the token from `payment_source_token` creates the payment source as[Wompi's documentation](https://docs.wompi.co/docs/en-us/fuentes-de-pago)suggests .
+The `Wompi::Client` ask for the acceptance_token and with the acceptance_token and the token from `payment_source_token` creates the payment source as [Wompi's      documentation](https://docs.wompi.co/docs/en-us/fuentes-de-pago) suggests .
 
 When the payment source is success the action `create` in the  controller `app/controllers/subscriptions_controller.rb` make a redirection to 
 [Google search](https://google.com).
