@@ -15,6 +15,16 @@ For the tokenization this projects uses the [widget](https://docs.wompi.co/docs/
 
 
 ## Run app
+- Create your `.env` file with this structure
+```
+MERCHANT_PUBLIC_KEY=pub_XXX_XXXXXXXXXXXXXX #Merchant's public key provided by Wompi used for tokenization and get acceptance token
+MERCHANT_PRIVATE_KEY=prv_XXX_XXXXXXXXXXXXX #Merchant's private key provided by Wompi used to create payment source
+WOMPI_HOST=https://sandbox.wompi.co/v1/ #Wompi url for sandbox
+```
+
+You can find all the information about Wompi's enviroments and/or keys in this [link](https://docs.wompi.co/docs/en-us/ambientes-y-llaves)
+
+## Run app
 
 - Run command
 ```
