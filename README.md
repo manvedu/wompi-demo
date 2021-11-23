@@ -5,8 +5,6 @@ Hi!
 Using this project you can create tokens in Wompi and with that token create a payment source. 
 For the tokenization this projects uses the [widget](https://docs.wompi.co/docs/en-us/fuentes-de-pago#widget-in-tokenization-mode) provided by Wompi.
 
-# Dependencies
-
 
 # Installation
 - Clone project from **git@github.com:manvedu/wompi-demo.git**
