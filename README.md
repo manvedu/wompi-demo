@@ -20,7 +20,7 @@ MERCHANT_PRIVATE_KEY=prv_XXX_XXXXXXXXXXXXX #Merchant's private key provided by W
 WOMPI_HOST=https://sandbox.wompi.co/v1/ #Wompi url for sandbox
 ```
 
-You can find all the information about Wompi's enviroments and/or keys in this [link](https://docs.wompi.co/docs/en-us/ambientes-y-llaves)
+You can find all the information about Wompi's environments and merchant's [here](https://docs.wompi.co/docs/en-us/ambientes-y-llaves)
 
 
 2. Run command
@@ -31,7 +31,7 @@ dotenv -f .env rails s
 
 Now your app is running at localhost:3000
 
-3. open in your browser `localhost:3000` and test it.
+3. Open in your browser `localhost:3000` and test it.
 
 
 # Details
