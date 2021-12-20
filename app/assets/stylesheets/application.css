@@ -1,15 +1,269 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+body {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  background-color: #f2f2f2;
+  font-family: "Roboto", sans-serif;
+}
+
+.logo {
+  width: 50px;
+}
+
+.logo-header {
+  height: 35px;
+  padding: 20px;
+}
+
+.payment {
+  max-width: 36em;
+  margin: 0 auto;
+  background-color: white;
+  color: #5e6977;
+  border-radius: 0.3em;
+  box-shadow: 0.2em 0.3em 0.8em -0.45em rgba(0, 0, 0, 0.2), 0 0.2em 0.5em 0 rgba(0, 0, 0, 0.08);
+}
+.payment-tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2em;
+  padding-right: 2em;
+  border-bottom: 1px solid #e1e8ee;
+  counter-reset: section;
+}
+.payment-tabs > a {
+  padding: 1.35em 0;
+  color: #bdc6cf;
+  font-size: 0.9em;
+  position: relative;
+  transition: all 200ms ease-in-out;
+}
+.payment-tabs > a:before {
+  counter-increment: section;
+  content: counter(section);
+  display: inline-block;
+  width: 1.65em;
+  height: 1.65em;
+  margin-right: 0.5em;
+  border: 0.15em solid #e1e8ee;
+  color: #bdc6cf;
+  font-size: 0.85em;
+  text-align: center;
+  line-height: 1.45em;
+  border-radius: 50%;
+  transition: all 300ms ease-in-out;
+}
+.payment-tabs > a:after {
+  content: "";
+  display: block;
+  border-bottom: 2px solid transparent;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+}
+.payment-tabs > a:hover {
+  text-decoration: none;
+  color: #91a0af;
+}
+.payment-tabs > a:hover:before {
+  border-color: #91a0af;
+  color: #91a0af;
+}
+.payment-tabs > a.active {
+  color: #9f63d4;
+  font-weight: 500;
+}
+.payment-tabs > a.active:before {
+  border-color: #9f63d4;
+  color: inherit;
+}
+.payment-tabs > a.active:after {
+  border-bottom: 2px solid #9f63d4;
+}
+.payment-customer {
+  display: none;
+}
+.payment-method h2 {
+  margin: 0;
+  padding: 1.8em 2em;
+  font-size: 1.2em;
+  line-height: 1.2;
+  color: #5e6977;
+}
+.payment-method .pm-item {
+  position: relative;
+}
+.payment-method .pm-item:last-child:after {
+  content: "";
+  display: block;
+  height: 0.125em;
+  background-color: #e1e8ee;
+  position: absolute;
+  left: 2em;
+  right: 2em;
+}
+.payment-method .pm-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  background-color: #f6f7f9;
+}
+.payment-method .pm-text {
+  padding-left: 2.5em;
+  position: relative;
+}
+.payment-method .pm-text:before {
+  content: "";
+  display: block;
+  width: 1.5em;
+  height: 1.5em;
+  background: #e1e8ee;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  box-shadow: 0 0.08rem 0 rgba(20, 28, 35, 0.25) inset;
+}
+.payment-method .pm-text h5 {
+  padding-top: 0.25em;
+  font-size: 1em;
+}
+.payment-method .pm-text p {
+  margin-bottom: 0;
+  color: #86939e;
+}
+.payment-method .pm-thumb {
+  padding-left: 0.9em;
+}
+.payment-method input[type=radio] {
+  display: none;
+}
+.payment-method input[type=radio]:checked + .pm-label {
+  background: none;
+}
+.payment-method input[type=radio]:checked + .pm-label .pm-text:before {
+  background: radial-gradient(white 0%, white 33%, #4666ff 38%, #4666ff 100%);
+}
+.payment-input {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2em;
+}
+.payment-input label {
+  margin-bottom: 0.3em;
+  color: #697685;
+  font-size: 0.9em;
+}
+.payment-input .form-control {
+  border-width: 2px;
+}
+.payment-input .form-control:not(.is-valid):not(.is-invalid) {
+  border-color: #e1e8ee;
+}
+.payment-input .form-control:focus {
+  box-shadow: none;
+}
+.payment-input .form-control.is-valid, .payment-input .form-control.is-invalid {
+  background-position: calc(100% - 1.1em) center;
+  background-repeat: no-repeat;
+}
+.payment-input .form-control.is-valid {
+  border-color: #4666ff;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAJCAYAAADpeqZqAAAABGdBTUEAALGPC/xhBQAAAQ5JREFUGBmNUDtOw0AQnTcBiS4n4BgxVEh0NDQg2xUdFQoFEkIoks064IaKJhSkoAAJbN+AE9jbcg6OkJ3MGhwZKUJMMfvmze/Ngv5paR2eCJATcMy+p5Rw8FdvasNYiJ5JZJucqzito/1PS19pE92sazQ2PiJHr5prBwM0ZyF5IaGhiJikiSb9xtRGhwuRd92y4Xkm3E13qpwH4AkA1xaL5EkdXXpsbHiggyqVtOljBu6z3TLxGN6ZJj5dkHvSjW2s/gOCPVWx5fPMeMiC8sJjb99FChIbn+mRs5btOTBm06Ac9yiV+WO3QfGoM1fTPA3CPBsV511N9642dUTShGOVea2S3syouNJ79R9+2xLcA1oZPdllOgAAAABJRU5ErkJggg==");
+}
+.payment-input .form-control.is-invalid {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAIAAAAmzuBxAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowOUZFMTU2OUQ0NjcxMUU3ODREMjk0RUU3NzEwMEVENCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowOUZFMTU2QUQ0NjcxMUU3ODREMjk0RUU3NzEwMEVENCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjA5RkUxNTY3RDQ2NzExRTc4NEQyOTRFRTc3MTAwRUQ0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjA5RkUxNTY4RDQ2NzExRTc4NEQyOTRFRTc3MTAwRUQ0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+eFdNEwAAASBJREFUeNpi+HH91vOi2g+rN/1HBUARoDhQluXj8nVfD5/4evQkExcHr5crAxh83rr7Tc8Uhn//mXi4mXj9PFhEhYGc1819Xw8eA0oDydctfUARoDhQlhFo4M9rN58X1/99+w6ogy/Q+9P6rf++fGUWFpLsbWTXUgepAOr7fv7ym85Jv+49hNjCpiQvUp7HaagLZDNBhIAcXm83BhgAsiHSCBVAMz5v3QVXAWQDRRAqfl69+bKqFWgF0B0CsWFAEsgGigDFQUq+nb143zP8jqnrXQuPLweOAp0FJIFsoAhQHCjLnCep+OPiVQYmRrHaYh5XB5AzFWRZJMW/Hj7+/+t3hn//WPgjAv9+/Mxlbcbr7YrkUtd/3398O3oKKAsQYABi9qDVgBM2nAAAAABJRU5ErkJggg==");
+}
+.payment-input .form-group {
+  flex: 1 1 100%;
+}
+.payment-input .form-group.half {
+  flex: 1 1 50%;
+}
+.payment-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #e1e8ee;
+}
+.payment-actions > form {
+  flex: 1 1 50%;
+  padding: 1em;
+  color: #86939e;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+}
+.payment-actions > form + form {
+  border-left: 1px solid #e1e8ee;
+}
+.payment-actions > form > input.finish {
+  border: none;
+  background: none;
+  color: #4666ff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.payment-actions > form > input.return {
+  pointer-events: none;
+  border: none;
+  background: none;
+  color: gray;
+  font-size: 1.2rem;
+}
+@media (max-width: 479px) {
+  .payment {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  .payment-tabs {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  .payment-tabs > a {
+    font-size: 0.725rem;
+  }
+  .payment-tabs > a:before {
+    display: block;
+    margin: 0 auto;
+  }
+  .payment-method h2 {
+    padding: 0.75rem;
+    font-size: 1em;
+  }
+  .payment-method .pm-label {
+    flex-wrap: wrap;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  .payment-method .pm-text, .payment-method .pm-thumb {
+    padding-left: 2.25em;
+  }
+  .payment-method .pm-text {
+    flex: 1 1 100%;
+  }
+  .payment-method .pm-thumb {
+    flex: 0 0 auto;
+    align-self: center;
+    margin-top: 0.35em;
+  }
+  .payment-method .pm-thumb + .pm-thumb {
+    padding-left: 1.25em;
+  }
+  
+  .payment-input {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  .payment-input .form-group.half {
+    flex: 1 1 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
