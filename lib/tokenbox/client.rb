@@ -13,7 +13,7 @@ class Tokenbox::Client
       "institution": "BANBOX",
       "type": "OAUTH_OTP",
       "consumer_id": "WOMPI",
-      "redirect_url": "https://redirect.com",
+      "redirect_url": "https://hidden-taiga-55264.herokuapp.com/tokenbox_store/redirect",
       "aggregated_merchant": {
           "external_uuid": "787878",
           "doing_business_as_name": "DEMO STORE",
