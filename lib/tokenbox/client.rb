@@ -12,7 +12,7 @@ class Tokenbox::Client
     tokens_params = {
       "institution": "BANBOX",
       "type": "OAUTH_OTP",
-      "consumer_id": "DEMO",
+      "consumer_id": "WOMPI",
       "redirect_url": "https://redirect.com",
       "aggregated_merchant": {
           "external_uuid": "787878",
@@ -22,7 +22,7 @@ class Tokenbox::Client
       }
     }.to_json
 
-    response = post(url: 'tokens', json_params: tokens_params)
+    response = post(url: 'token', json_params: tokens_params)
   end
 
   private
@@ -36,7 +36,8 @@ class Tokenbox::Client
 
   def headers
     {
-      'Authorization' => "Bearer IDDELICETEX"
+      'Authorization' => "Bearer IDDELICETEX",
+      'Content-Type' => "application/json"
     }
   end
 
