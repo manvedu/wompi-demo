@@ -37,7 +37,9 @@ class Tokenbox::Client
   def headers
     {
       'Authorization' => "Bearer IDDELICETEX",
-      'Content-Type' => "application/json"
+      'Content-Type' => "application/json",
+      'X-Auth-Secret-Key' => "SECRET_84730754074075045",
+      'X-Auth-Access-Key' => "ACCESS_4634543243245"
     }
   end
 
