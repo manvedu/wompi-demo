@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
 body {
-  padding-top: 3em;
-  padding-bottom: 3em;
   background-color: #f2f2f2;
   font-family: "Roboto", sans-serif;
 }
@@ -15,6 +13,11 @@ body {
   padding: 20px;
 }
 
+.logo-redirect{
+  width: 200px;
+  margin: 0 auto;
+}
+
 .payment {
   max-width: 36em;
   margin: 0 auto;
@@ -22,6 +25,7 @@ body {
   color: #5e6977;
   border-radius: 0.3em;
   box-shadow: 0.2em 0.3em 0.8em -0.45em rgba(0, 0, 0, 0.2), 0 0.2em 0.5em 0 rgba(0, 0, 0, 0.08);
+  margin-top: 3em;
 }
 .payment-tabs {
   display: flex;
@@ -269,14 +273,38 @@ body {
 }
 
 .redirect {
+  height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 1px black solid;
-  padding: 20px;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px;
+  background-color: white;
+  color: #4666ff;
+  border-radius: 5px;
+  box-shadow: -1px 2px 10px 1px rgb(0 0 0 / 31%);
 }
 
 .payment-info{
   margin: 5px;
+}
+
+.to-back{
+  text-decoration: none;
+  background-color: #4666ff;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 20px;
+  margin-top: 2rem;
+  border-radius: 5px;
+  box-shadow: -1px 2px 10px 1px rgb(0 0 0 / 31%);
 }

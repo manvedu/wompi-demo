@@ -1,11 +1,20 @@
 <div class="redirect">
-    <h1>Página de redirección de la Banbox Demo Store</h1>
-    <p class="payment-info">
-        <strong>Monto: </strong>
-        <%= @paymentData["amount_in_cents"] %>
-        <%= @paymentData["currency"] %>
-    </p>
-    <p class="payment-info">
-        <strong>Status: </strong>
-        <%= @paymentData["status"] %></p>
+    <div class="container">
+        <%= image_tag("demo-logo.png", :alt => "logo", :class => 'logo-redirect') %>
+        <h1>Transacción realizada:</h1>
+        <p class="payment-info">
+            <strong>Monto: </strong>
+            <%= @paymentData["amount_in_cents"] %>
+            <%= @paymentData["currency"] %>
+        </p>
+        <p class="payment-info">
+            <strong>Status: </strong>
+            <%= @paymentData["status"] %>
+        </p>
+        <p class="payment-info">
+            <strong>Fecha: </strong>
+            <%= @paymentData["created_at"] %>
+        </p>
+    </div>
+    <%= link_to "Volver a la Demo Store", "/tokenbox_store/index", class: "to-back" %>
 </div>
