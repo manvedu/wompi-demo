@@ -8,9 +8,9 @@ class Tokenbox::Client
     end
   end
 
-  def create_token
+  def create_token(institution)
     tokens_params = {
-      "institution": "BANBOX",
+      "institution": institution,
       "type": "OAUTH_OTP",
       "consumer_id": "WOMPI",
       "redirect_url": "https://hidden-taiga-55264.herokuapp.com/tokenbox_store/redirect",

@@ -87,10 +87,10 @@ body {
 }
 .payment-method h2 {
   margin: 0;
-  padding: 1.8em 2em;
+  padding: 1.8em 2em 0.5em;
   font-size: 1.2em;
   line-height: 1.2;
-  color: #5e6977;
+  color: #4666ff;
 }
 .payment-method .pm-item {
   position: relative;
@@ -131,6 +131,7 @@ body {
 .payment-method .pm-text h5 {
   padding-top: 0.25em;
   font-size: 1em;
+  margin: 0;
 }
 .payment-method .pm-text p {
   margin-bottom: 0;
@@ -190,7 +191,7 @@ body {
   align-items: center;
   border-top: 1px solid #e1e8ee;
 }
-.payment-actions > form {
+.payment-actions > * {
   flex: 1 1 50%;
   padding: 1em;
   color: #86939e;
@@ -198,10 +199,10 @@ body {
   text-align: center;
   text-decoration: none;
 }
-.payment-actions > form + form {
+.payment-actions button+input {
   border-left: 1px solid #e1e8ee;
 }
-.payment-actions > form > input.finish {
+.payment-actions > input.finish {
   border: none;
   background: none;
   color: #4666ff;
@@ -209,7 +210,7 @@ body {
   cursor: pointer;
 }
 
-.payment-actions > form > input.return {
+.payment-actions > button.return {
   pointer-events: none;
   border: none;
   background: none;
@@ -271,6 +272,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100vw;
+  flex-direction: column;
+  border: 1px black solid;
+  padding: 20px;
+}
+
+.payment-info{
+  margin: 5px;
 }

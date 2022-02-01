@@ -4,29 +4,50 @@
     <div class="payment-customer">
         <h2>Demo Store</h2>
     </div>
-    <div class="payment-method">
-        <h2>Elige un método de pago</h2>
-        <div class="pm-item"><input id="mpp" type="radio" disabled name="payment-method" /><label class="pm-label" for="mpp">
-                <div class="pm-text">
-                    <h5>Nequi</h5>
-                    <p>Pago seguro online. Se necesita tener cuenta en Nequi.</p>
-                </div>
-                <div class="pm-thumb">
-                  <%= image_tag("nequi.svg", :alt => "nequi", :class => 'logo') %>
-                </div>
-            </label></div>
-        <div class="pm-item"><input id="mcc" type="radio" name="payment-method" checked="checked" /><label class="pm-label" for="mcc">
-                <div class="pm-text">
-                    <h5>Guardar mi cuenta Banbox</h5>
-                    <p>Inscribe tu cuenta Banbox para hacer pagos recurrentes y seguros directamente desde tu cuenta.</p>
-                </div>
-                <div class="pm-thumb">
-                  <%= image_tag("banbox.png", :alt => "banbox", :class => 'logo') %>
-                </div>
-            </label></div>
-    </div>
-    <div class="payment-actions">
-      <%= button_to "Volver a Envíos", {:controller => :tokenbox_store }, :class => 'return' %>
-      <%= button_to "Finalizar orden", {:controller => :tokenbox_store, :action => 'create' }, :method => :post, :class => 'finish' %>
-    </div>
+    <%= form_for :post, :url => { :controller => :tokenbox_store, :action => :create} do |f| %>
+        <div class="payment-method">
+            <h2>Inscribir nueva cuenta</h2>
+            <div class="pm-item">
+                <input id="mcc" type="radio" name="payment-method" value="BANBOX"/>
+                <label class="pm-label" for="mcc">
+                    <div class="pm-text">
+                        <h5>Guardar mi cuenta Banbox</h5>
+                        <p>Inscribe tu cuenta Banbox para hacer pagos en ambiente de pruebas.</p>
+                    </div>
+                    <div class="pm-thumb">
+                      <%= image_tag("banbox.png", :alt => "banbox", :class => 'logo') %>
+                    </div>
+                </label>
+            </div>
+            <div class="pm-item">
+                <input id="mbb" type="radio" name="payment-method" value="BANCOLOMBIA" />
+                <label class="pm-label" for="mbb">
+                    <div class="pm-text">
+                      <h5>Guardar mi cuenta Bancolombia</h5>
+                      <p>Inscribe tu cuenta Bancolombia para hacer pagos recurrentes y seguros directamente desde tu cuenta.</p>
+                    </div>
+                    <div class="pm-thumb">
+                      <%= image_tag("bancolombia.png", :alt => "bancolombia", :class => 'logo') %>
+                    </div>
+                </label>
+            </div>
+            <h2>Pagar con cuenta ya inscrita</h2>
+            <div class="pm-item">
+                <input id="mcc" type="radio" name="payment-method" checked="checked" value="BANBOX-TO-PAY"/>
+                <label class="pm-label" for="mcc">
+                    <div class="pm-text">
+                        <h5>Pagar con Banbox</h5>
+                        <p>Realiza pagos con Banbox en ambiente de pruebas.</p>
+                    </div>
+                    <div class="pm-thumb">
+                      <%= image_tag("banbox.png", :alt => "banbox", :class => 'logo') %>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div class="payment-actions">
+          <%= f.button "Volver a Envíos", :type => 'button', :class => 'return' %>
+          <%= f.submit "Finalizar orden",  :class => 'finish' %>
+        </div>
+    <% end %>
 </div>
