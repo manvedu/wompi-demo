@@ -15,6 +15,7 @@ class Tokenbox::Payment
       "type": "AUTOMATIC_PAYMENT",
       "token_id": "01FSZ9NAE87YBSTHZQBXP6BY43",
       "terminal_id": "03218738790321ASIUHJASDH",
+      "reference": ((0...8).map { (65 + rand(26)).chr }.join)
     }.to_json
 
     response = post(url: 'payments', json_params: payments_params)
