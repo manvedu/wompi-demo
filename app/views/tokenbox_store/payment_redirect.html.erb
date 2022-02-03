@@ -15,6 +15,10 @@
             <strong>Fecha: </strong>
             <%= @paymentData["created_at"] %>
         </p>
+        <p class="payment-info">
+            <strong>Referencia: </strong>
+            <%= @paymentData["reference"] %>
+        </p>
     </div>
     <%= link_to "Volver a la Demo Store", "/tokenbox_store/index", class: "to-back" %>
 </div>
