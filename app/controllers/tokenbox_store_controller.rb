@@ -22,7 +22,7 @@ class TokenboxStoreController < ApplicationController
       
       if response.success?
         authData = info["auth_data"]
-        redirect_to authData["consumer_redirect_url"]
+        redirect_to authData["auth_url"]
       else
         flash.now[:alert] = 'Error XXXX'
       end
