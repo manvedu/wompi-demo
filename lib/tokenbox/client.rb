@@ -38,8 +38,8 @@ class Tokenbox::Client
     {
       'Authorization' => "Bearer IDDELICETEX",
       'Content-Type' => "application/json",
-      'X-Auth-Secret-Key' => "SECRET_84730754074075045",
-      'X-Auth-Access-Key' => "ACCESS_4634543243245"
+      'X-Auth-Secret-Key' => "SECRET_01FVWYS8S55J3VW0NZX0QZRZ0Y",
+      'X-Auth-Access-Key' => "ACCESS_01FVWYS8WWXV017DA6MPM0F5A9"
     }
   end
 
